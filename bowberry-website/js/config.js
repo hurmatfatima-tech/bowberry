@@ -9,5 +9,5 @@ const SITE = {
   currency: "Rs.",
   // Paste your Google Apps Script web app link here (ends with /exec).
   // While this is empty, the cart sends orders to WhatsApp instead.
-  ordersUrl: "https://script.google.com/macros/s/AKfycbyWJnACCBU0EssdMUzM4QxW4GxxCksrgn6Un14fwBbFxJ3FYO0T40-dNc9X9wvSEoPu/exec"
+  ordersUrl: "https://script.google.com/macros/s/AKfycbx9VyKfaygHcxlkC-dUFcumICUckFp0doqh58WN8pqBMKnVWB3fRTnyO-JOtmzutowi/exec"
 };
