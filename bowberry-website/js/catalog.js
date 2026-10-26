@@ -1,15 +1,17 @@
 ```javascript
 /* Builds product cards. Used on the home, shop and product pages. */
+
 const Catalog = (() => {
-  const byId = id => PRODUCTS.find(p => p.id === id);
-  const url = p => `product.html?id=${encodeURIComponent(p.id)}`;
+  const byId = (id) => PRODUCTS.find((p) => p.id === id);
+
+  const url = (p) =>
+    "product.html?id=" + encodeURIComponent(p.id);
 
   function thumb(p) {
     const d = h("div", { class: "thumb" });
 
-    // Load images from the website's root assets folder.
     const imagePath = "/" + String(p.image || "").replace(/^\/+/, "");
-    d.style.setProperty("--img", `url("${imagePath}")`);
+    d.style.setProperty("--img", 'url("' + imagePath + '")');
 
     return d;
   }
@@ -22,9 +24,11 @@ const Catalog = (() => {
     );
 
     add.addEventListener("click", () => {
-      const color = (p.colors && p.colors.length) ? p.colors[0] : "Default";
+      const color =
+        p.colors && p.colors.length > 0 ? p.colors[0] : "Default";
+
       Cart.add(p.id, color, 1);
-      toast(`${p.name} (${color}) added`, "cart.html", "View cart");
+      toast(p.name + " (" + color + ") added", "cart.html", "View cart");
     });
 
     return h(
@@ -32,7 +36,11 @@ const Catalog = (() => {
       { class: "item" },
       h(
         "a",
-        { class: "thumb-link", href: url(p), "aria-label": `View ${p.name}` },
+        {
+          class: "thumb-link",
+          href: url(p),
+          "aria-label": "View " + p.name
+        },
         thumb(p)
       ),
       h("h3", null, h("a", { href: url(p) }, p.name)),
