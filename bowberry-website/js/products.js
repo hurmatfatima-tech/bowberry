@@ -5,14 +5,14 @@
           (capital letters and .jpg / .png must match exactly).
    colors: the options the customer can choose from.
    ============================================================ */
-const PRODUCTS = [
+ const PRODUCTS= [
   { id: "gajray.jpeg", name: "gajray", category: "Accessories", price: 899,
     short: "never dying gajray that will evaluate your look",
-    description: "Lovingly handcrafted with soft yarn and delicate details, these gajray are perfect for weddings, mehndi events, festive occasions, and everyday desi looks. 💗
+    description: `Lovingly handcrafted with soft yarn and delicate details, these gajray are perfect for weddings, mehndi events, festive occasions, and everyday desi looks. 💗
 
 🌷 Handmade with love
 🧶 Soft, lightweight & reusable
-🎀 Available in your favourite colours",
+🎀 Available in your favourite colours`,
     colors: ["Blush","pink","cream"], image: "assets/gajray.jpeg" },
   { id: "crochet-bouquet", name: "Crochet flower keychain", category: "Flowers", price: 999,
     short: "Flowers that never wilt",
