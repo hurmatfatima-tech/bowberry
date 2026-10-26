@@ -7,7 +7,7 @@ const Catalog = (() => {
 function thumb(p) {
   const d = h("div", { class: "thumb" });
 
-  const imagePath = "/" + p.image.replace(/^\/+/, "");
+  const imagePath = "../" + p.image.replace(/^\/+/, "");
   d.style.setProperty("--img", `url("${imagePath}")`);
 
   return d;
