@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bowberry | Handmade with a bow on top</title>
+  <meta name="description" content="Bowberry makes handmade bags, flowers, toys and gifts, made to order and tied with a bow.">
+  <meta property="og:title" content="Bowberry | Handmade with a bow on top">
+  <meta property="og:description" content="Bowberry makes handmade bags, flowers, toys and gifts, made to order and tied with a bow.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#F7DEDF">
+  <link rel="icon" type="image/jpeg" href="assets/swan.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="Bowberry home">
+      <img class="brand-logo" src="assets/swan.jpg" alt="" width="46" height="46">
+      <span class="brand-text">Bowberry</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <a href="shop.html">Shop</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="cart-link" href="cart.html">Cart <span class="cart-count" data-cart-count data-empty="true">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Handmade</p>
+        <h1>Little handmade things, tied with a bow.</h1>
+        <p class="lead">Bowberry makes handmade bags, flowers, toys and gifts. Every piece is made to order, with soft yarn and a lot of patience.</p>
+        <div class="actions">
+          <a class="btn" href="shop.html">Shop now</a>
+          <a class="btn btn-ghost" href="#order">How to order</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="tilt" id="tilt">
+          <img src="assets/logo.jpg" alt="Bowberry logo: a swan wearing a bow, with the word Bowberry and the word Handmade" width="901" height="655">
+          <span class="glare" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><div class="marquee-group"><span>Handmade</span><span>Made to order</span><span>Tied with a bow</span><span>Soft yarn</span><span>Made with love</span><span>Bowberry</span></div><div class="marquee-group"><span>Handmade</span><span>Made to order</span><span>Tied with a bow</span><span>Soft yarn</span><span>Made with love</span><span>Bowberry</span></div></div></div>
+
+    <div class="scallop" aria-hidden="true"></div>
+
+    <section class="band" id="favourites">
+      <div class="wrap">
+        <h2>Our favourites</h2>
+        <p class="section-lead">Choose a colour, add it to your cart and send your order on WhatsApp.</p>
+        <div class="grid" id="featured"></div>
+        <p class="more"><a class="btn btn-ghost" href="shop.html">See everything</a></p>
+      </div>
+    </section>
+
+    <section class="wrap" id="order">
+      <h2>How to order</h2>
+      <ol class="steps">
+        <li><h3>Fill your cart</h3><p>Pick what you like and choose a colour for each piece.</p></li>
+        <li><h3>Send it on WhatsApp</h3><p>Add your address in the cart and we get your order as a message.</p></li>
+        <li><h3>We confirm</h3><p>We check the colours, delivery charges and when it will be ready.</p></li>
+        <li><h3>We make and deliver</h3><p>Your piece is made by hand, wrapped with a bow and sent to your door.</p></li>
+      </ol>
+    </section>
+
+    <section class="band" id="about">
+      <div class="wrap about-grid">
+        <img class="about-logo" src="assets/logo.jpg" alt="Bowberry logo: a swan wearing a bow, with the word Bowberry and the word Handmade" width="901" height="655">
+        <div>
+          <h2>About Bowberry</h2>
+          <p>Bowberry is a small handmade business. We love soft yarn, pretty ribbons and pieces that make people smile.</p>
+          <p>Every order is made for you, so no two pieces are exactly the same.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap contact" id="contact">
+      <h2>Let’s make something for you</h2>
+      <p class="section-lead">Message us and we’ll reply as soon as we can.</p>
+      <div class="actions center">
+        <a class="btn" href="#contact" data-wa data-wa-text="Hi Bowberry! I have a question.">WhatsApp us</a>
+        <a class="btn btn-ghost" href="#contact" data-ig>Instagram</a>
+        <a class="btn btn-ghost" href="#contact" data-mail>Email</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> Bowberry. Handmade with love.</p>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/tilt.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+  <script src="js/smooth.js"></script>
+</body>
+</html>

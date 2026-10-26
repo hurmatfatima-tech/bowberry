@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop | Bowberry</title>
+  <meta name="description" content="Browse handmade bags, flowers, toys, accessories and gifts from Bowberry.">
+  <meta property="og:title" content="Shop | Bowberry">
+  <meta property="og:description" content="Browse handmade bags, flowers, toys, accessories and gifts from Bowberry.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#F7DEDF">
+  <link rel="icon" type="image/jpeg" href="assets/swan.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html" aria-label="Bowberry home">
+      <img class="brand-logo" src="assets/swan.jpg" alt="" width="46" height="46">
+      <span class="brand-text">Bowberry</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <a href="shop.html" aria-current="page">Shop</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="cart-link" href="cart.html">Cart <span class="cart-count" data-cart-count data-empty="true">0</span></a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div class="page-title">
+      <p class="eyebrow">Handmade</p>
+      <h1>Shop</h1>
+      <p class="section-lead">Everything is handmade and made to order.</p>
+      <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </main>
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> Bowberry. Handmade with love.</p>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/shop.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+  <script src="js/smooth.js"></script>
+</body>
+</html>
