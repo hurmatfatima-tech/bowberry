@@ -13,7 +13,7 @@
 🌷 Handmade with love
 🧶 Soft, lightweight & reusable
 🎀 Available in your favourite colours`,
-    colors: ["Blush","pink","cream"], image: "assets/gajray.jpeg" },
+    colors: ["Blush","pink","cream"], image: "assets/gajray2.jpeg" },
   { id: "crochet-bouquet", name: "Crochet flower keychain", category: "Flowers", price: 999,
     short: "Flowers that never wilt",
     description: "A bouquet of handmade crochet flowers ",
