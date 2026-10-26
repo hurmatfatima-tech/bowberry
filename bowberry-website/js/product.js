@@ -27,7 +27,7 @@ const PRODUCTS = [
     description: "Bring a dash of handmade charm to your day-to-day organizer with our sweet and compact Crochet Mini Pouch. Perfectly sized to slip into your handbag, backpack, or carry solo, this tiny accessory is as practical as it is adorable.Ideal for keeping your loose change, keys, earbuds, hair ties, or lip balm secure and easy to find.",
     colors: ["Blush", "Berry", "Cream"], image: "assets/pouch.jpg" },
  {
-  id: "bag",
+  id: "bag-2",
   name: "Crochet Rose Bag",
   category: "bags",
   price: 0,
@@ -47,20 +47,17 @@ const PRODUCTS = [
     short: "Carry a pocketful of sunshine with you, wherever you go! 🌻",
     description: "A gift box with a few of our handmade pieces, wrapped with a ribbon. Message us with your budget and who it is for, and we will pick the items.",
     image: "assets/sunflower.jpg" },
- { id: "gift-box", name: "Handmade Crochet Sunflower Hanging Charm", category: "Accessories", price: 999,
+ { id: "gift-box2", name: "Handmade Crochet Sunflower Hanging Charm", category: "Accessories", price: 999,
     short: "Carry a pocketful of sunshine with you, wherever you go! 🌻",
     description: "A gift box with a few of our handmade pieces, wrapped with a ribbon. Message us with your budget and who it is for, and we will pick the items.",
     image: "assets/sunflower2.jpg" },
 
-  { id: "phone-cover", name: "Crochet phone cover", category: "Accessories", price: 1200,
+  { id: "phone-cover-1", name: "Crochet phone cover", category: "Accessories", price: 1200,
     short: "A soft handmade cover for your phone.",
     description: "A handmade crochet phone cover. Write your phone model in the cart so we make the right size.",
     colors: ["Blush", "Berry", "Cream"], image: "assets/phonecover2.jpg" },
 
-    { id: "phone-cover", name: "Crochet phone cover", category: "Accessories", price: 1200,
-    short: "A soft handmade cover for your phone.",
-    description: "A handmade crochet phone cover. Write your phone model in the cart so we make the right size.",
-    colors: ["Blush", "Berry", "Cream"], image: "assets/phonecover1.jpg" },
+  
 
     { id: "jellyfish", name: "crocteh jellyfish", category: "Accessories", price: 999,
     short: "Whimsical waves in every stitch—meet your new jellyfish companion!",
