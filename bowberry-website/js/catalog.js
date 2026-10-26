@@ -1,4 +1,4 @@
-```javascript
+
 /* Builds product cards. Used on the home, shop and product pages. */
 
 const Catalog = (() => {
@@ -61,4 +61,3 @@ const Catalog = (() => {
 
   return { byId, url, thumb, card, mount };
 })();
-```
