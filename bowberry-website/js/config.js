@@ -3,7 +3,7 @@
    ============================================================ */
 const SITE = {
   name: "Bowberry",
-       // country code + number, no + or spaces (e.g. 923001234567)
+  whatsapp:"923298860600" // country code + number, no + or spaces (e.g. 923001234567)
   instagram: "bowberry.knots",      // without the @
   email: "bowberry.knots@gmail.com",
   currency: "Rs.",
