@@ -61,16 +61,16 @@ const PRODUCTS = [
   { id: "phone-cover", name: "Crochet phone cover", category: "Accessories", price: 1200,
     short: "A soft handmade cover for your phone.",
     description: "A handmade crochet phone cover. Write your phone model in the cart so we make the right size.",
-    colors: ["Blush", "Berry", "Cream"], image: "assets/phonecover2.jpg" }
+    colors: ["Blush", "Berry", "Cream"], image: "assets/phonecover2.jpg" },
 
     { id: "phone-cover", name: "Crochet phone cover", category: "Accessories", price: 1200,
     short: "A soft handmade cover for your phone.",
     description: "A handmade crochet phone cover. Write your phone model in the cart so we make the right size.",
-    colors: ["Blush", "Berry", "Cream"], image: "assets/phonecover1.jpg" }
+    colors: ["Blush", "Berry", "Cream"], image: "assets/phonecover1.jpg" },
 
     { id: "jellyfish", name: "crocteh jellyfish", category: "Accessories", price: 999,
     short: "Whimsical waves in every stitch—meet your new jellyfish companion!",
     description: "Add a splash of handmade charm to your everyday essentials with this adorable crochet jellyfish keychain! Meticulously handcrafted with love, this whimsical accessory features a soft, pastel-toned bell in gentle pink and lavender, accented with delicate wavy borders and tiny bead details.",
     colors: ["Blush", "Berry", "Cream"], image: "assets/jellyfish.jpg" }
 ];
-];
+
