@@ -13,7 +13,7 @@
 🌷 Handmade with love
 🧶 Soft, lightweight & reusable
 🎀 Available in your favourite colours`,
-    colors: ["Blush","pink","cream"], image: "assets/gajray.jpeg" },
+    colors: ["Blush","pink","cream"], image: "assets/gajray2.jpeg" },
   { id: "crochet-bouquet", name: "Crochet flower keychain", category: "Flowers", price: 999,
     short: "Flowers that never wilt",
     description: "A bouquet of handmade crochet flowers ",
@@ -62,5 +62,5 @@
     { id: "jellyfish", name: "crocteh jellyfish", category: "Accessories", price: 999,
     short: "Whimsical waves in every stitch—meet your new jellyfish companion!",
     description: "Add a splash of handmade charm to your everyday essentials with this adorable crochet jellyfish keychain! Meticulously handcrafted with love, this whimsical accessory features a soft, pastel-toned bell in gentle pink and lavender, accented with delicate wavy borders and tiny bead details.",
-    colors: ["Blush", "Berry", "Cream"], image: "assets/jellyfish.jpg" }
+    colors: ["Blush", "Berry", "Cream"], image: "assets/jellyfish.jpg" },
 ];
