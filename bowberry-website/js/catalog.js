@@ -1,33 +1,49 @@
+```javascript
 /* Builds product cards. Used on the home, shop and product pages. */
 const Catalog = (() => {
   const byId = id => PRODUCTS.find(p => p.id === id);
   const url = p => `product.html?id=${encodeURIComponent(p.id)}`;
 
+  function thumb(p) {
+    const d = h("div", { class: "thumb" });
 
-function thumb(p) {
-  const d = h("div", { class: "thumb" });
+    // Load images from the website's root assets folder.
+    const imagePath = "/" + String(p.image || "").replace(/^\/+/, "");
+    d.style.setProperty("--img", `url("${imagePath}")`);
 
-  const imagePath = "../" + p.image.replace(/^\/+/, "");
-  d.style.setProperty("--img", `url("${imagePath}")`);
-
-  return d;
-}
-
+    return d;
   }
 
   function card(p) {
-    const add = h("button", { class: "btn btn-small", type: "button" }, "Add to cart");
+    const add = h(
+      "button",
+      { class: "btn btn-small", type: "button" },
+      "Add to cart"
+    );
+
     add.addEventListener("click", () => {
-      const color = p.colors[0];
+      const color = (p.colors && p.colors.length) ? p.colors[0] : "Default";
       Cart.add(p.id, color, 1);
       toast(`${p.name} (${color}) added`, "cart.html", "View cart");
     });
-    return h("article", { class: "item" },
-      h("a", { class: "thumb-link", href: url(p), "aria-label": `View ${p.name}` }, thumb(p)),
+
+    return h(
+      "article",
+      { class: "item" },
+      h(
+        "a",
+        { class: "thumb-link", href: url(p), "aria-label": `View ${p.name}` },
+        thumb(p)
+      ),
       h("h3", null, h("a", { href: url(p) }, p.name)),
       h("p", { class: "price" }, Cart.money(p.price)),
       h("p", null, p.short),
-      h("div", { class: "card-actions" }, add, h("a", { class: "link", href: url(p) }, "Details"))
+      h(
+        "div",
+        { class: "card-actions" },
+        add,
+        h("a", { class: "link", href: url(p) }, "Details")
+      )
     );
   }
 
@@ -37,3 +53,4 @@ function thumb(p) {
 
   return { byId, url, thumb, card, mount };
 })();
+```
