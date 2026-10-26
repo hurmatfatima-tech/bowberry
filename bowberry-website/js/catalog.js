@@ -3,10 +3,16 @@ const Catalog = (() => {
   const byId = id => PRODUCTS.find(p => p.id === id);
   const url = p => `product.html?id=${encodeURIComponent(p.id)}`;
 
-  function thumb(p) {
-    const d = h("div", { class: "thumb" });
-    d.style.setProperty("--img", `url("${p.image}")`);
-    return d;
+
+function thumb(p) {
+  const d = h("div", { class: "thumb" });
+
+  const imagePath = "/" + p.image.replace(/^\/+/, "");
+  d.style.setProperty("--img", `url("${imagePath}")`);
+
+  return d;
+}
+
   }
 
   function card(p) {
