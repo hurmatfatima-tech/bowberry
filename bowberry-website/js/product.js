@@ -72,10 +72,16 @@
 
   details.append(title, price, description, colorLabel, addButton);
   container.replaceChildren(picture, details);
+const otherProducts = PRODUCTS
+  .filter(p => p.id !== product.id)
+  .slice(0, 4);
 
-  const otherProducts = PRODUCTS.filter(p => p.id !== product.id).slice(0, 4);
-
-  if (related && window.Catalog) {
+if (related) {
+  if (typeof Catalog !== "undefined") {
     Catalog.mount(related, otherProducts);
+  } else {
+    console.error("Catalog is not loaded. Check catalog.js.");
   }
+}
+
 })();
