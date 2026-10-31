@@ -37,8 +37,9 @@ const PRODUCTS = [
     colors: ["Blush Pink", "Berry", "Cream", "Lavender", "Sage Green", "Butter Yellow", "Sky Blue", "Mocha"],
     image: "assets/pouch.jpg" },
 
-  { id: "bag-2", name: "Crochet Rose Bag", category: "Bags", price: 2299, // change to your actual price
-    short: "A beautiful handmade rose-shaped crochet bag with pearl detailing.",
+  { id: "bag-2", name: "Crochet Rose Bag", category: "Bags", price: 2499, // change to your actual price
+    short: "A beautiful handmade rose-shaped crochet bag with pearl detailing.
+        "size: 5.5inches",
     description: "A uniquely handcrafted crochet rose bag, designed with beautiful rose-inspired details and elegant pearl accents. Perfect for adding a touch of charm to your everyday outfits and special occasions.\n\n✨ Custom sizes are available upon request. Please note that prices may vary depending on the selected size.",
     colors: ["Burgundy", "Red", "Blush Pink", "Dusty Rose", "Cream", "Lavender", "Black"],
     image: "assets/rosebag.png", size:"5.5inches" },
