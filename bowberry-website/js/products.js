@@ -26,21 +26,14 @@
     short: "Cute, cozy, and entirely handcrafted to carry your tiny treasures",
     description: "Bring a dash of handmade charm to your day-to-day organizer with our sweet and compact Crochet Mini Pouch. Perfectly sized to slip into your handbag, backpack, or carry solo, this tiny accessory is as practical as it is adorable.Ideal for keeping your loose change, keys, earbuds, hair ties, or lip balm secure and easy to find.",
     colors: ["Blush", "Berry", "Cream"], image: "assets/pouch.jpg" },
- {
+{
   id: "bag-2",
   name: "Crochet Rose Bag",
   category: "bags",
-  price: 0,
-  short: "Four round coasters for your tea table.",
-  description: "A set of four handmade crochet coasters. Good for tea cups and a lovely small gift.",
-  colors: ["Blush", "Cream"],
-  options: {
-    label: "Crochet Style",
-    choices: [
-      { name: "One Side Crochet", price: 1500 },
-      { name: "Both Sides Crochet", price: 2999}
-    ]
-  },
+  price: 2599, // Apni actual price add karna
+  short: "A beautiful handmade rose-shaped crochet bag with pearl detailing.",
+  description: "A uniquely handcrafted crochet rose bag, designed with beautiful rose-inspired details and elegant pearl accents. Perfect for adding a touch of charm to your everyday outfits and special occasions.\n\n✨ Custom sizes are available upon request. Please note that prices may vary depending on the selected size.",
+  colors: ["Burgundy","red"],
   image: "assets/rosebag.png"
 },
   { id: "gift-box", name: "Handmade Crochet Sunflower Hanging Charm", category: "Accessories", price: 399,
