@@ -19,7 +19,7 @@ const PRODUCTS = [
     colors: ["Blush Pink", "Ivory", "Cream", "Rose Pink", "Peach", "Lavender", "Butter Yellow", "Burgundy"],
     image: "assets/gajray2.jpeg" },
 
-  { id: "crochet-bouquet", name: "Crochet flower keychain", category: "Flowers", price: 420,
+  { id: "crochet-bouquet", name: "Crochet flower keychain", category: "Flowers", price: 370,
     short: "Flowers that never wilt",
     description: "A bouquet of handmade crochet flowers ",
     colors: ["Pink Mix", "White Mix", "Red Mix", "Lavender Mix", "Peach Mix", "Yellow Mix", "Pastel Mix"],
@@ -37,13 +37,13 @@ const PRODUCTS = [
     colors: ["Blush Pink", "Berry", "Cream", "Lavender", "Sage Green", "Butter Yellow", "Sky Blue", "Mocha"],
     image: "assets/pouch.jpg" },
 
-  { id: "bag-2", name: "Crochet Rose Bag", category: "Bags", price: 2499, // change to your actual price
+  { id: "bag-2", name: "Crochet Rose Bag", category: "Bags", price: 2299, // change to your actual price
     short: "A beautiful handmade rose-shaped crochet bag with pearl detailing.",
     description: "A uniquely handcrafted crochet rose bag, designed with beautiful rose-inspired details and elegant pearl accents. Perfect for adding a touch of charm to your everyday outfits and special occasions.\n\n✨ Custom sizes are available upon request. Please note that prices may vary depending on the selected size.",
     colors: ["Burgundy", "Red", "Blush Pink", "Dusty Rose", "Cream", "Lavender", "Black"],
-    image: "assets/rosebag.png" },
+    image: "assets/rosebag.png", size:"5.5inches" },
 
-  { id: "sunflower-charm", name: "Handmade Crochet Sunflower Hanging Charm", category: "Accessories", price: 399,
+  { id: "sunflower-charm", name: "Handmade Crochet Sunflower Hanging Charm", category: "Accessories", price: 300,
     short: "Carry a pocketful of sunshine with you, wherever you go! 🌻",
     description: "A cheerful handmade crochet sunflower charm to hang on your bag, keys or phone. Made to order in the colours you choose.",
     colors: ["Sunny Yellow", "Butter Yellow", "Golden Orange", "Cream", "Pastel Pink"],
@@ -61,7 +61,7 @@ const PRODUCTS = [
     colors: ["Blush Pink", "Berry", "Cream", "Lavender", "Sage Green", "Butter Yellow", "Sky Blue", "Mocha", "Peach", "Black"],
     image: "assets/phonecover1.jpg" },
 
-  { id: "jellyfish", name: "Crochet jellyfish keychain", category: "Accessories", price: 1200,
+  { id: "jellyfish", name: "Crochet jellyfish keychain", category: "Accessories", price: 999,
     short: "Whimsical waves in every stitch. Meet your new jellyfish companion!",
     description: "Add a splash of handmade charm to your everyday essentials with this adorable crochet jellyfish keychain! Meticulously handcrafted with love, this whimsical accessory features a soft, pastel-toned bell in gentle pink and lavender, accented with delicate wavy borders and tiny bead details.",
     colors: ["Pink & Lavender", "Baby Pink", "Lilac", "Mint Green", "Sky Blue", "Peach", "Coral Pink"],
