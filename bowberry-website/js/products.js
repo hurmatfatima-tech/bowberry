@@ -42,7 +42,7 @@ const PRODUCTS = [
         "size: 5.5inches",
     description: "A uniquely handcrafted crochet rose bag, designed with beautiful rose-inspired details and elegant pearl accents. Perfect for adding a touch of charm to your everyday outfits and special occasions.\n\n✨ Custom sizes are available upon request. Please note that prices may vary depending on the selected size.",
     colors: ["Burgundy", "Red", "Blush Pink", "Dusty Rose", "Cream", "Lavender", "Black"],
-    image: "assets/rosebag.png", size:"5.5inches" },
+    image: "assets/rosebag.png" },
 
   { id: "sunflower-charm", name: "Handmade Crochet Sunflower Hanging Charm", category: "Accessories", price: 300,
     short: "Carry a pocketful of sunshine with you, wherever you go! 🌻",
