@@ -1,5 +1,9 @@
-/* Cart page: list, change quantities, place the order */
+/* Cart page: list, change quantities, delivery charges, place the order */
 (function () {
+  /* ---- Delivery rule: edit these two lines to change it ---- */
+  const DELIVERY_FEE = 250;               // Rs. charged for every city except the home city
+  const HOME_CITY = /nankana|ننکانہ/i;    // "Nankana", "Nankana Sahib", "nankana sahib punjab"... deliver free
+
   const lines = document.getElementById("cart-lines");
   const layout = document.getElementById("cart-layout");
   const emptyBox = document.getElementById("cart-empty");
@@ -9,12 +13,37 @@
   const form = document.getElementById("checkout");
   const status = document.getElementById("status");
   const placeBtn = document.getElementById("place");
+  const cityInput = document.getElementById("city");
 
   const useSheet = /^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec$/.test(SITE.ordersUrl || "");
   const validWhatsapp = /^\d{10,15}$/.test(SITE.whatsapp);
   const idleLabel = useSheet ? "Place order" : "Send order on WhatsApp";
   placeBtn.textContent = idleLabel;
   let done = false;
+
+  /* Delivery and total rows under the subtotal (created here, nothing to add in cart.html) */
+  const subtotalRow = document.querySelector(".summary > .total");
+  const deliveryNote = document.querySelector(".summary > .small-note");
+  const deliveryEl = h("span", null, "");
+  const grandEl = h("span", null, "");
+  subtotalRow.after(
+    h("div", { class: "total", style: "font-size:1rem;font-weight:400;color:var(--ink)" }, h("span", null, "Delivery"), deliveryEl),
+    h("div", { class: "total", style: "margin-top:.6rem;padding-top:.7rem;border-top:1px solid var(--line)" }, h("span", null, "Total"), grandEl)
+  );
+  deliveryNote.textContent = `Delivery is free in Nankana Sahib. Other cities pay ${Cart.money(DELIVERY_FEE)}.`;
+
+  function delivery() {
+    const city = cityInput.value.trim();
+    if (!city) return { fee: 0, text: "Enter your city" };
+    if (HOME_CITY.test(city)) return { fee: 0, text: "Free" };
+    return { fee: DELIVERY_FEE, text: Cart.money(DELIVERY_FEE) };
+  }
+  function updateTotals() {
+    const d = delivery();
+    deliveryEl.textContent = d.text;
+    grandEl.textContent = Cart.money(Cart.total() + d.fee);
+  }
+  cityInput.addEventListener("input", updateTotals);
 
   function lineEl(i) {
     const p = Catalog.byId(i.id);
@@ -43,31 +72,38 @@
     emptyBox.hidden = has || done;
     lines.replaceChildren(...items.map(lineEl));
     subtotal.textContent = Cart.money(Cart.total());
+    updateTotals();
   }
   document.addEventListener("cart:change", render);
   render();
 
   function orderFrom(data) {
+    const d = delivery();
+    const items = Cart.items().map(i => {
+      const p = Catalog.byId(i.id);
+      return { name: p.name, color: i.color, qty: i.qty, price: p.price };
+    });
+    // Delivery goes in as one more line, so the Google Sheet shows it and its total includes it
+    if (d.fee > 0) items.push({ name: "Delivery charges", color: "Outside Nankana Sahib", qty: 1, price: d.fee });
     return {
       name: data.get("name"), phone: data.get("phone"), city: data.get("city"),
       address: data.get("address"), phoneModel: data.get("phoneModel"), note: data.get("note"), payment: data.get("payment"),
       website: data.get("website"), // hidden spam trap, real people leave it empty
-      items: Cart.items().map(i => {
-        const p = Catalog.byId(i.id);
-        return { name: p.name, color: i.color, qty: i.qty, price: p.price };
-      }),
-      total: Cart.total()
+      items,
+      delivery: d.fee,
+      total: Cart.total() + d.fee
     };
   }
 
-  function showThanks(orderNumber, total, phone) {
+  function showThanks(orderNumber, order) {
     done = true;
     title.hidden = true;
     layout.hidden = true;
     emptyBox.hidden = true;
     thanks.hidden = false;
+    const inc = order.delivery ? ` (including ${Cart.money(order.delivery)} delivery)` : " (free delivery)";
     document.getElementById("thanks-text").textContent =
-      `Your order number is #${orderNumber}. The total is ${Cart.money(total)}. We will contact you on ${phone} to confirm the colours, delivery charges and delivery time.`;
+      `Your order number is #${orderNumber}. The total is ${Cart.money(order.total)}${inc}. We will contact you on ${order.phone} to confirm the colours and delivery time.`;
     const wa = document.getElementById("thanks-wa");
     if (validWhatsapp) {
       wa.href = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`Hi Bowberry! I just placed order #${orderNumber}.`)}`;
@@ -82,10 +118,11 @@
       return;
     }
     const rows = order.items.map((i, n) => `${n + 1}. ${i.name} (${i.color}) x ${i.qty} = ${Cart.money(i.price * i.qty)}`);
+    const inc = order.delivery ? ` (including ${Cart.money(order.delivery)} delivery)` : " (free delivery)";
     const msg = [
       "Hi Bowberry! I’d like to place an order.", "",
       ...rows, "",
-      `Total: ${Cart.money(order.total)} (delivery charges to be confirmed)`,
+      `Total: ${Cart.money(order.total)}${inc}`,
       `Payment: ${order.payment}`, "",
       `Name: ${order.name}`, `Phone: ${order.phone}`, `City: ${order.city}`, `Address: ${order.address}`,
       order.phoneModel ? `Phone model (for cover): ${order.phoneModel}` : null,
@@ -108,7 +145,7 @@
       const res = await fetch(SITE.ordersUrl, { method: "POST", body: JSON.stringify(order) });
       const result = await res.json();
       if (!result.ok) throw new Error(result.error || "Order failed");
-      showThanks(result.orderNumber, order.total, order.phone);
+      showThanks(result.orderNumber, order);
       Cart.clear();
     } catch (err) {
       status.textContent = "We couldn’t place your order. Please try again, or message us on WhatsApp.";
