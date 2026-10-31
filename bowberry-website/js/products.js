@@ -6,7 +6,7 @@
    colors: the options the customer can choose from.
    ============================================================ */
  const PRODUCTS= [
-  { id: "gajray.jpeg", name: "gajray", category: "Accessories", price: 899,
+  { id: "gajray.jpeg", name: "gajray", category: "Accessories", price: 799,
     short: "never dying gajray that will evaluate your look",
     description: `Lovingly handcrafted with soft yarn and delicate details, these gajray are perfect for weddings, mehndi events, festive occasions, and everyday desi looks. 💗
 
@@ -14,11 +14,11 @@
 🧶 Soft, lightweight & reusable
 🎀 Available in your favourite colours`,
     colors: ["Blush","pink","cream"], image: "assets/gajray2.jpeg" },
-  { id: "crochet-bouquet", name: "Crochet flower keychain", category: "Flowers", price: 999,
+  { id: "crochet-bouquet", name: "Crochet flower keychain", category: "Flowers", price: 420,
     short: "Flowers that never wilt",
     description: "A bouquet of handmade crochet flowers ",
     colors: ["Pink mix", "White mix", "Red mix"], image: "assets/boqet.jpg" },
-  { id: "bag", name: "Rose & Pearls bucket bag", category: "bags", price: 3000,
+  { id: "bag", name: "Rose & Pearls bucket bag", category: "bags", price: 3500,
     short: "Crafted with cozy cream stitches, rich maroon roses, and a dash of pearl magic",
     description: "Designed in a classic drawstring pouch style, it has just the right amount of space for your daily essentials—like your phone, keys, lipstick, and cards.",
    image: "assets/rosebucket.jpg" },
@@ -43,11 +43,11 @@
   },
   image: "assets/rosebag.png"
 },
-  { id: "gift-box", name: "Handmade Crochet Sunflower Hanging Charm", category: "Accessories", price: 699,
+  { id: "gift-box", name: "Handmade Crochet Sunflower Hanging Charm", category: "Accessories", price: 399,
     short: "Carry a pocketful of sunshine with you, wherever you go! 🌻",
     description: "A gift box with a few of our handmade pieces, wrapped with a ribbon. Message us with your budget and who it is for, and we will pick the items.",
     image: "assets/sunflower.jpg" },
- { id: "gift-box2", name: "Handmade Crochet Sunflower Hanging Charm", category: "Accessories", price: 999,
+ { id: "gift-box2", name: "Handmade Crochet Sunflower Hanging Charm", category: "Accessories", price: 799,
     short: "Carry a pocketful of sunshine with you, wherever you go! 🌻",
     description: "A gift box with a few of our handmade pieces, wrapped with a ribbon. Message us with your budget and who it is for, and we will pick the items.",
     image: "assets/sunflower2.jpeg" },
@@ -59,7 +59,7 @@
 
   
 
-    { id: "jellyfish", name: "crocteh jellyfish", category: "Accessories", price: 999,
+    { id: "jellyfish", name: "crocteh jellyfish", category: "Accessories", price: 1200,
     short: "Whimsical waves in every stitch—meet your new jellyfish companion!",
     description: "Add a splash of handmade charm to your everyday essentials with this adorable crochet jellyfish keychain! Meticulously handcrafted with love, this whimsical accessory features a soft, pastel-toned bell in gentle pink and lavender, accented with delicate wavy borders and tiny bead details.",
     colors: ["Blush", "Berry", "Cream"], image: "assets/jellyfish.jpg" },
