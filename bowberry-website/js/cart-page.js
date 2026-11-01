@@ -132,27 +132,42 @@
     status.textContent = "WhatsApp is opening. Press send in WhatsApp to place your order.";
   }
 
-  form.addEventListener("submit", async e => {
-    e.preventDefault();
-    if (!Cart.count()) return;
-    const order = orderFrom(new FormData(form));
-    if (!useSheet) return sendToWhatsApp(order);
+ form.addEventListener("submit", async e => {
+  e.preventDefault();
 
-    placeBtn.disabled = true;
-    placeBtn.textContent = "Placing order…";
-    status.textContent = "";
-    try {
-      const res = await fetch(SITE.ordersUrl, { method: "POST", body: JSON.stringify(order) });
-      const result = await res.json();
-      if (!result.ok) throw new Error(result.error || "Order failed");
-      showThanks(result.orderNumber, order);
-      Cart.clear();
-    } catch (err) {
-      status.textContent = "We couldn’t place your order. Please try again, or message us on WhatsApp.";
-      placeBtn.disabled = false;
-      placeBtn.textContent = idleLabel;
-    }
-  });
+  if (!Cart.count() || placeBtn.disabled) return;
 
-  document.getElementById("clear").addEventListener("click", () => { Cart.clear(); status.textContent = ""; });
-})();
+  const order = orderFrom(new FormData(form));
+
+  if (!useSheet) return sendToWhatsApp(order);
+
+  placeBtn.disabled = true;
+  placeBtn.textContent = "Placing order…";
+  status.textContent = "";
+
+  try {
+
+    await fetch(SITE.ordersUrl, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(order)
+    });
+
+    // no-cors responses are opaque, so their JSON cannot be read.
+    // A resolved fetch means the browser completed the request,
+    // but does not independently confirm that the order was saved.
+
+    showThanks("Pending confirmation", order);
+    Cart.clear();
+
+  } catch (err) {
+
+    console.error("Bowberry order error:", err);
+
+    status.textContent =
+      "Order could not be sent. Please try again or contact us on WhatsApp.";
+
+    placeBtn.disabled = false;
+    placeBtn.textContent = idleLabel;
+  }
+});
