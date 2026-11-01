@@ -1,4 +1,4 @@
-```javascript
+
 /* Cart page: list, change quantities, delivery charges, place the order */
 (function () {
 
@@ -422,4 +422,4 @@
   });
 
 })();
-```
+
