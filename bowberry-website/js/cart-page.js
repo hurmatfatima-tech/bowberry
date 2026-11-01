@@ -170,4 +170,4 @@
     placeBtn.disabled = false;
     placeBtn.textContent = idleLabel;
   }
-});
+})();
